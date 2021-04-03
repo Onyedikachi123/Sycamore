@@ -1,0 +1,1366 @@
+{
+  "info": {
+    "_postman_id": "ef414ecf-5230-4687-af4a-25857db50315",
+    "name": "SavingsAndInvestmentsAnd Loans",
+    "description": "Creditclan Savings And Investments And Loans",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Register",
+      "id": "4eef808d-8688-4a27-a8ed-5be4fd383b7a",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "xIpuUk5JY1gnePohE2qOei0WRMkbwdEzZ9LQDVDpHjWaHvy8qtlSAFwvOTfGzric",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"profile\": {\r\n        \"email\": \"segbukenshi@yahoo.com\",\r\n        \"password\": \"password\",\r\n        \"full_name\": \"Segun Okunuga\",\r\n        \"is_individual\": \"\",\r\n        \"phone\": \"07034400026\"\r\n    }\r\n}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": "https://mobile.creditclan.com/api/v3/customer/register/user",
+        "description": "Customer Registeration Endpoint\r\nCreate a new customer\r\n{\r\n    \"profile\": {\r\n        \"email\": \"segbukenshi@yahoo.com\"| Email address of customer,\r\n        \"password\": \"password\"| Password of customer,\r\n        \"full_name\": \"Segun Okunuga\"| Full name of customer,\r\n        \"is_individual\": \"\"| Customer Type | 0 - SME , 1 - Individual,\r\n        \"phone\": \"07034400026\"| Phone Number of Customer\r\n    }\r\n}\r\n"
+      },
+      "response": []
+    },
+    {
+      "name": "Login",
+      "id": "37be2da5-95f5-4e71-a646-00537b1897c7",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "xIpuUk5JY1gnePohE2qOei0WRMkbwdEzZ9LQDVDpHjWaHvy8qtlSAFwvOTfGzric",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\":\"segbukenshi@yahoo.com\",\r\n    \"password\":\"password\"\r\n}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": "https://mobile.creditclan.com/api/v3/login",
+        "description": "\r\nCustomer Login Endpoint\r\nCustomer Login \r\n{\r\n    \"email\":\"segbukenshi@yahoo.com\"|Email used in register,\r\n    \"password\":\"password\"|Password used in register\r\n}\r\nResponse Data\r\nToken - CUstomer login token to be used for subsequent api calls\r\nValidations - Show the data that has been validated by customer"
+      },
+      "response": []
+    },
+    {
+      "name": "Reset Password",
+      "id": "877ac5b7-13df-49c9-b163-5536872684ee",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "xIpuUk5JY1gnePohE2qOei0WRMkbwdEzZ9LQDVDpHjWaHvy8qtlSAFwvOTfGzric",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"EMAIL\":\"okunuga.oriyomi@gmail.com\"\r\n}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": "https://mobile.creditclan.com/api/v3/customer/reset/password",
+        "description": "User password reset endpoint"
+      },
+      "response": []
+    },
+    {
+      "name": "Initiate Customer BVN Validation",
+      "id": "4d154b05-5f3e-4a12-88c4-15996c92fbf8",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "xIpuUk5JY1gnePohE2qOei0WRMkbwdEzZ9LQDVDpHjWaHvy8qtlSAFwvOTfGzric",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n\t\"bvn\":\"22216561665\"\n}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": "https://mobile.creditclan.com/api/v3/customer/validate_customer_bvn"
+      },
+      "response": []
+    },
+    {
+      "name": "Validate Customer BVN  Using OTP",
+      "id": "81f209e2-41da-4a23-bb2c-620ec2860ad2",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "xIpuUk5JY1gnePohE2qOei0WRMkbwdEzZ9LQDVDpHjWaHvy8qtlSAFwvOTfGzric",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n\t\"txn\":\"CC603251142\",\n\t\"otp\":\"148834\" \n}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": "https://mobile.creditclan.com/api/v3/customer/validate_customer_bvn_otp"
+      },
+      "response": []
+    },
+    {
+      "name": "Validate Phone Number",
+      "id": "f7e0e4a2-1b76-42ca-935f-b5d2c06ac3a3",
+      "request": {
+        "auth": { "type": "apikey", "apikey": { "key": "", "value": "" } },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "name": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "x-api-key",
+            "value": "xIpuUk5JY1gnePohE2qOei0WRMkbwdEzZ9LQDVDpHjWaHvy8qtlSAFwvOTfGzric",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n\t\"phone\":\"0817926489055555555\" \n}"
+        },
+        "url": "https://mobile.creditclan.com/api/v3/customer/validate_phone_number"
+      },
+      "response": []
+    },
+    {
+      "name": "Validate Phone Number OTP",
+      "id": "5519e91c-bd26-4974-869f-1de4dbd48ade",
+      "request": {
+        "auth": { "type": "apikey", "apikey": { "key": "", "value": "" } },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "name": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "x-api-key",
+            "value": "xIpuUk5JY1gnePohE2qOei0WRMkbwdEzZ9LQDVDpHjWaHvy8qtlSAFwvOTfGzric",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n\t\"phone\":\"08179264890155555555555\",\n\t\"otp\":976831\n}"
+        },
+        "url": "https://mobile.creditclan.com/api/v3/customer/validate_phone_number_otp"
+      },
+      "response": []
+    },
+    {
+      "name": "User Details",
+      "id": "d839e9f3-6803-4d96-9e0e-6d0f808bd321",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "xIpuUk5JY1gnePohE2qOei0WRMkbwdEzZ9LQDVDpHjWaHvy8qtlSAFwvOTfGzric",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"token\":\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJQRU9QTEVfSUQiOiIxMDQxMjMiLCJFTUFJTCI6Im9rdW51Z2Eub3JpeW9taUBnbWFpbC5jb20iLCJMRU5ERVJfSUQiOiI0MDAyMiJ9.W4ZT76eq1TFrJ7J-GnZHEkmioKnsL9OH95Gurrb6CUQ\"}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": "https://mobile.creditclan.com/api/v3/user/details",
+        "description": "User Details"
+      },
+      "response": []
+    },
+    {
+      "name": "Upload Photo",
+      "id": "d8ad2e99-daa3-4cab-8fcd-5e36bd2da4a3",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "xIpuUk5JY1gnePohE2qOei0WRMkbwdEzZ9LQDVDpHjWaHvy8qtlSAFwvOTfGzric",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "file",
+              "type": "file",
+              "src": "/C:/Users/MY PC/Pictures/Ben.png"
+            },
+            {
+              "key": "token",
+              "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJQRU9QTEVfSUQiOiIxMDQxMjMiLCJFTUFJTCI6Im9rdW51Z2Eub3JpeW9taUBnbWFpbC5jb20iLCJMRU5ERVJfSUQiOiI0MDAyMiJ9.W4ZT76eq1TFrJ7J-GnZHEkmioKnsL9OH95Gurrb6CUQ",
+              "type": "text"
+            }
+          ]
+        },
+        "url": "https://mobile.creditclan.com/api/v3/customer/upload/picture"
+      },
+      "response": []
+    },
+    {
+      "name": "Validate Work Email",
+      "id": "f02a0391-f8d1-40f4-a4e9-b278c8e475e4",
+      "request": {
+        "auth": { "type": "apikey", "apikey": { "key": "", "value": "" } },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "name": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "x-api-key",
+            "value": "xIpuUk5JY1gnePohE2qOei0WRMkbwdEzZ9LQDVDpHjWaHvy8qtlSAFwvOTfGzric",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n\t\"work_email\":\"okunuga.oriyomi@gmail.com\"\n}"
+        },
+        "url": "https://mobile.creditclan.com/api/v3/customer/request_work_email_otp"
+      },
+      "response": []
+    },
+    {
+      "name": "Validate Work Email OTP",
+      "id": "78c0135f-55f4-4a02-8409-3770c3ee0287",
+      "request": {
+        "auth": { "type": "apikey", "apikey": { "key": "", "value": "" } },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "name": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "x-api-key",
+            "value": "xIpuUk5JY1gnePohE2qOei0WRMkbwdEzZ9LQDVDpHjWaHvy8qtlSAFwvOTfGzric",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n\t\"work_email\":\"okunuga.oriyomi@gmail.com\",\n\t\"otp\":317695\n}"
+        },
+        "url": "https://mobile.creditclan.com/api/v3/customer/validate_work_email_otp"
+      },
+      "response": []
+    },
+    {
+      "name": "Save User Data",
+      "id": "a22f611c-afb4-4374-b59a-5e82042abc11",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "xIpuUk5JY1gnePohE2qOei0WRMkbwdEzZ9LQDVDpHjWaHvy8qtlSAFwvOTfGzric",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"token\":\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJQRU9QTEVfSUQiOiIxMDQxMjMiLCJFTUFJTCI6Im9rdW51Z2Eub3JpeW9taUBnbWFpbC5jb20iLCJMRU5ERVJfSUQiOiI0MDAyMiJ9.W4ZT76eq1TFrJ7J-GnZHEkmioKnsL9OH95Gurrb6CUQ\",\r\n    \"profile\": {\r\n        \"legal_name\": \"Okunuga Soji\",\r\n        \"date_of_birth\": \"1984-10-06\",\r\n        \"birth_year\": \"1984\",\r\n        \"birth_month\": \"10\",\r\n        \"birth_day\": \"6\",\r\n        \"gender\": \"0\",\r\n        \"marital_status\": \"0\"\r\n    },\r\n    \"next_of_kin\": {\r\n        \"nok_name\": \"segun okunuga\",\r\n        \"nok_email\": \"segbukenshi@yahoo.com\",\r\n        \"nok_phone\": \"07034400026\",\r\n        \"nok_address\": \"341 Old Abeookuta Motor Road Oko Oba Agege Lagos\",\r\n        \"nok_relationship\": null\r\n    },\r\n    \"home_address\": { \r\n        \"home_address\": \"4 Alade Close Surulere Lagos\",\r\n        \"home_state\": \"25\",\r\n        \"home_lga\": 234, \r\n        \"number_of_years\": \"0\"\r\n    },\r\n    \"work\": { \r\n        \"occupation_id\": \"0\",\r\n        \"work_sector\": \"14\",\r\n        \"net_monthly_income\": \"300000\",\r\n        \"gross_annual\": null, \r\n        \"company_name\": \"Creditclan Tech Limited\", \r\n        \"work_address\": \"Plot 1038B, Ologun Agbaje Street, Off Adeola Odeku, Victoria Island, Lagos.\",\r\n        \"start_month\": 2019,\r\n        \"start_year\": 10, \r\n        \"designation_id\": null, \r\n        \"official_email\": null\r\n    }\r\n}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": "https://mobile.creditclan.com/api/v3/customer/save_data",
+        "description": "Save User Data"
+      },
+      "response": []
+    },
+    {
+      "name": "Bank Accounts",
+      "id": "c4868e9f-a109-4802-8a91-2338523219b0",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "xIpuUk5JY1gnePohE2qOei0WRMkbwdEzZ9LQDVDpHjWaHvy8qtlSAFwvOTfGzric",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"token\":\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJQRU9QTEVfSUQiOiIxMTEyNDQiLCJFTUFJTCI6InNlZ2J1a2Vuc2hpQHlhaG9vLmNvbSIsIkxFTkRFUl9JRCI6IjQwMDIyIn0.5Ej6tlOGJGlYPcGQ9bg3fCAVTroH4RhT1ul_-yF4XnU\"}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": "https://mobile.creditclan.com/api/v3/customer/accounts",
+        "description": "Bank Accounts"
+      },
+      "response": []
+    },
+    {
+      "name": "Resolve Bank Account",
+      "id": "02c2b198-3ac2-42b1-b238-9fafd67616bb",
+      "request": {
+        "auth": { "type": "apikey", "apikey": { "key": "", "value": "" } },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "name": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "warning": "This is a duplicate header and will be overridden by the x-api-key header generated by Postman.",
+            "key": "x-api-key",
+            "value": "xIpuUk5JY1gnePohE2qOei0WRMkbwdEzZ9LQDVDpHjWaHvy8qtlSAFwvOTfGzric",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJQRU9QTEVfSUQiOiIxNzQ3NyIsIkVNQUlMIjoib2t1bnVnYS5vcml5b21pQGdtYWlsLmNvbSIsIkxFTkRFUl9JRCI6IjY3NjAifQ.aMVCWqYrSON4BLqtWj6ohyC-AylWy1n_Rezby3SpOP4\", \r\n    \"account_number\":\"0046329069\",\r\n    \"bank_code\":\"058\"\r\n}"
+        },
+        "url": "https://mobile.creditclan.com/api/v3/user/account/resolve"
+      },
+      "response": []
+    },
+    {
+      "name": "Save Bank Account",
+      "id": "8a6cad45-23db-4b93-a8ee-af41dc0ffa28",
+      "request": {
+        "auth": { "type": "apikey", "apikey": { "key": "", "value": "" } },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "name": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "x-api-key",
+            "value": "xIpuUk5JY1gnePohE2qOei0WRMkbwdEzZ9LQDVDpHjWaHvy8qtlSAFwvOTfGzric",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJQRU9QTEVfSUQiOiIxMTUwNzIiLCJFTUFJTCI6Im9rdW51Z2Eub3JpeW9taUBnbWFpbC5jb20iLCJMRU5ERVJfSUQiOiI0MDE3OCJ9.oGMn2m9To9JUiCsZcFO1pgiV6_vX5T3POSK2ArRcH-E\", \r\n    \"account_number\":\"0046329069\",\r\n    \"bank_id\":\"1\",\r\n    \"account_name\":\"Soji Oriyomi Okunuga\"\r\n}"
+        },
+        "url": "https://mobile.creditclan.com/api/v3/user/account/save"
+      },
+      "response": []
+    },
+    {
+      "name": "Cards",
+      "id": "bb92c8de-dc66-4eec-9b88-d11c03622d90",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "xIpuUk5JY1gnePohE2qOei0WRMkbwdEzZ9LQDVDpHjWaHvy8qtlSAFwvOTfGzric",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"token\":\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJQRU9QTEVfSUQiOiIxMTEyNDQiLCJFTUFJTCI6InNlZ2J1a2Vuc2hpQHlhaG9vLmNvbSIsIkxFTkRFUl9JRCI6IjQwMDIyIn0.5Ej6tlOGJGlYPcGQ9bg3fCAVTroH4RhT1ul_-yF4XnU\"}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": "https://mobile.creditclan.com/api/v3/customer/cards",
+        "description": "Cards"
+      },
+      "response": []
+    },
+    {
+      "name": "Initialize Paystack Transaction",
+      "id": "0a8c223c-35e1-4e29-a4b1-acb39c6659b9",
+      "request": {
+        "auth": { "type": "apikey", "apikey": { "key": "", "value": "" } },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "name": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "x-api-key",
+            "value": "xIpuUk5JY1gnePohE2qOei0WRMkbwdEzZ9LQDVDpHjWaHvy8qtlSAFwvOTfGzric",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJQRU9QTEVfSUQiOiIxNzQ3NyIsIkVNQUlMIjoib2t1bnVnYS5vcml5b21pQGdtYWlsLmNvbSIsIkxFTkRFUl9JRCI6IjY3NjAifQ.aMVCWqYrSON4BLqtWj6ohyC-AylWy1n_Rezby3SpOP4\",\r\n    \"amount\":\"5\"\r\n}"
+        },
+        "url": "https://mobile.creditclan.com/api/v3/gateway/initialize_transaction",
+        "description": "Initialize Paystack Transaction"
+      },
+      "response": []
+    },
+    {
+      "name": "Save Customer Card",
+      "id": "777eed62-7d7e-4bf1-bc82-41e23ac37b96",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "xIpuUk5JY1gnePohE2qOei0WRMkbwdEzZ9LQDVDpHjWaHvy8qtlSAFwvOTfGzric",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n\t\"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJQRU9QTEVfSUQiOiIxNzQ3NyIsIkVNQUlMIjoib2t1bnVnYS5vcml5b21pQGdtYWlsLmNvbSIsIkxFTkRFUl9JRCI6IjY3NjAifQ.aMVCWqYrSON4BLqtWj6ohyC-AylWy1n_Rezby3SpOP4\",\n\t\"reference\":\"kueiuhwouhol\"\n}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": "https://mobile.creditclan.com/api/v3/customer/add/card"
+      },
+      "response": []
+    },
+    {
+      "name": "Investment Snapshot",
+      "id": "7cd67d9f-6901-448d-8b8a-3416a5b59afc",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "xIpuUk5JY1gnePohE2qOei0WRMkbwdEzZ9LQDVDpHjWaHvy8qtlSAFwvOTfGzric",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"token\":\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJQRU9QTEVfSUQiOiIxMTEyNDQiLCJFTUFJTCI6InNlZ2J1a2Vuc2hpQHlhaG9vLmNvbSIsIkxFTkRFUl9JRCI6IjQwMDIyIn0.5Ej6tlOGJGlYPcGQ9bg3fCAVTroH4RhT1ul_-yF4XnU\"}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": "https://mobile.creditclan.com/api/v3/customer/investment/snapshot",
+        "description": "Investment Snapshot"
+      },
+      "response": []
+    },
+    {
+      "name": "Wallet Snapshot",
+      "id": "f8e9dfa5-5d70-4e3c-86c2-a556aea20a73",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "xIpuUk5JY1gnePohE2qOei0WRMkbwdEzZ9LQDVDpHjWaHvy8qtlSAFwvOTfGzric",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"token\":\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJQRU9QTEVfSUQiOiIxMTEyNDQiLCJFTUFJTCI6InNlZ2J1a2Vuc2hpQHlhaG9vLmNvbSIsIkxFTkRFUl9JRCI6IjQwMDIyIn0.5Ej6tlOGJGlYPcGQ9bg3fCAVTroH4RhT1ul_-yF4XnU\"}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": "https://mobile.creditclan.com/api/v3/customer/wallet/snapshot",
+        "description": "Wallet Snapshot"
+      },
+      "response": []
+    },
+    {
+      "name": "Recent Transactions",
+      "id": "ecb78112-9d67-4410-a1c6-1d15eaec5c55",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "xIpuUk5JY1gnePohE2qOei0WRMkbwdEzZ9LQDVDpHjWaHvy8qtlSAFwvOTfGzric",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"token\":\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJQRU9QTEVfSUQiOiIxMTEyNDQiLCJFTUFJTCI6InNlZ2J1a2Vuc2hpQHlhaG9vLmNvbSIsIkxFTkRFUl9JRCI6IjQwMDIyIn0.5Ej6tlOGJGlYPcGQ9bg3fCAVTroH4RhT1ul_-yF4XnU\"}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": "https://mobile.creditclan.com/api/v3/customer/recent_transactions",
+        "description": "Recent Transactions"
+      },
+      "response": []
+    },
+    {
+      "name": "Create a savings Request",
+      "id": "7c62fac5-3ffa-49d1-9ad2-8052c20b6d10",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-api-key",
+            "type": "text",
+            "value": "xIpuUk5JY1gnePohE2qOei0WRMkbwdEzZ9LQDVDpHjWaHvy8qtlSAFwvOTfGzric"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"plan\": {\r\n        \"title\": \"Car Purchase\",\r\n        \"amount\": \"10\",\r\n        \"target\": \"100\",\r\n        \"frequency\": \"2\",\r\n        \"duration\": \"12\",\r\n        \"start_date\": \"2020-10-31\",\r\n        \"funding_source\": \"1\",\r\n        \"category\":\"1\",\r\n        \"automated\":\"1\"\r\n    },\r\n    \"card\": {\r\n        \"connected_card_id\": \"86640\"\r\n    },\r\n    \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJQRU9QTEVfSUQiOiIxMTQyNDYiLCJFTUFJTCI6Im9rdW51Z2Eub3JpeW9taUBnbWFpbC5jb20iLCJMRU5ERVJfSUQiOiI0MDE3OCJ9.pS-i9PRsfN55FpQWEM3-3UzO5xnsb_Iwo4S8ZRElGD8\"\r\n}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": "https://mobile.creditclan.com/api/v3/customer/apply_for_savings",
+        "description": "Create a savings plan\r\nCreate a new savings plan for a customer\r\n{\r\n    \"plan\": {\r\n        \"title\": \"Car Purchase\"|Title of the plan,\r\n        \"amount\": \"10\"|Amount to be saved ,\r\n        \"target\": \"100\"|Target for a plan if any,\r\n        \"frequency\": \"2\"|Frequency of the savings plan|1 - Daily , 2 - Monthly , 4 - Weekly,\r\n        \"duration\": \"12\"|How long the plan is going to run,\r\n        \"start_date\": \"2020-10-31\"|The date the plan is to start,\r\n        \"funding_source\": \"1\"|Source of the funds for the plan |1 - Cards 2 - Cash Transfer| Default is 1 which is cards,\r\n        \"category\":\"1\"|The category of the savings|Not required,\r\n        \"automated\":\"1\"|Is the savings automated|Not required\r\n    },\r\n    \"card\": {\r\n        \"connected_card_id\": \"86640\"|The card to be used to fund the period savings|Unique ID from list of customer cards\r\n    },\r\n    \"token\": \"\"|Customer Login Token\r\n}"
+      },
+      "response": []
+    },
+    {
+      "name": "Savings Portfolio",
+      "id": "0159e04d-6838-414d-a626-4f4bc237aa36",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "xIpuUk5JY1gnePohE2qOei0WRMkbwdEzZ9LQDVDpHjWaHvy8qtlSAFwvOTfGzric",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"token\":\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJQRU9QTEVfSUQiOiIxMTEyNDQiLCJFTUFJTCI6InNlZ2J1a2Vuc2hpQHlhaG9vLmNvbSIsIkxFTkRFUl9JRCI6IjQwMDIyIn0.5Ej6tlOGJGlYPcGQ9bg3fCAVTroH4RhT1ul_-yF4XnU\"}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": "https://mobile.creditclan.com/api/v3/customer/savings/portfolio",
+        "description": "Savings Portfolio\r\nGet the list of customer's savings\r\n{\r\n\"token\":\"\"|Login token \r\n}\r\nImportant Response Data\r\nIS_ACTIVE - Indicates if the investment is active|1 - Active \r\nINVESTMENT_ID -  Represent the unique id of the investment - Its also the plan_id in other endpoints,\r\nREQUEST_PRINCIPAL - Amount of the investment,\r\nREQUEST_TENOR - Duration of the investment in months,\r\nDATE_ADDED - Date investment was created\r\nFUNDS_RECEIVED_DATE - The contract date for the savings\r\nINVESTMENT_TITLE - Savings title\r\nREQUEST_RATE - The interest rate applied to the investment\r\nBID_RATE_PERIOD_ID - Unit of the interest rate - 1- Per day | 2 - Per Month | 3 - Per Year\r\nREQUEST_TENOR_IN_DAYS - The duration of the investment in days\r\nDAYS_USED - Number of days the investment has used\r\nTTM - Number of days left for investment to mature\r\nMATURITY_DATE - The date the investment is going to mature\r\nPERCENT_DAYS_USED - Number of days the investment has used in percentage\r\nFREQUENCY - Frequency of savings - 1 - Daily , 2 - Monthly , 4- Weekly"
+      },
+      "response": []
+    },
+    {
+      "name": "Savings Plan History",
+      "id": "7c18ef86-9a00-4e9a-978b-5d799d2c527c",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "xIpuUk5JY1gnePohE2qOei0WRMkbwdEzZ9LQDVDpHjWaHvy8qtlSAFwvOTfGzric",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"token\":\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJQRU9QTEVfSUQiOiIxMTEyNDQiLCJFTUFJTCI6InNlZ2J1a2Vuc2hpQHlhaG9vLmNvbSIsIkxFTkRFUl9JRCI6IjQwMDIyIn0.5Ej6tlOGJGlYPcGQ9bg3fCAVTroH4RhT1ul_-yF4XnU\"}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": "https://mobile.creditclan.com/api/v3/customer/savings/history",
+        "description": "Savings Portfolio\r\nGet the list of customer's savings history\r\n{\r\n\"token\":\"\"|Login token \r\n}\r\nImportant Response Data\r\nIS_ACTIVE - Indicates if the investment is active|1 - Active \r\nINVESTMENT_ID -  Represent the unique id of the investment - Its also the plan_id in other endpoints,\r\nREQUEST_PRINCIPAL - Amount of the investment,\r\nREQUEST_TENOR - Duration of the investment in months,\r\nDATE_ADDED - Date investment was created\r\nFUNDS_RECEIVED_DATE - The contract date for the savings\r\nINVESTMENT_TITLE - Savings title\r\nREQUEST_RATE - The interest rate applied to the investment\r\nBID_RATE_PERIOD_ID - Unit of the interest rate - 1- Per day | 2 - Per Month | 3 - Per Year\r\nREQUEST_TENOR_IN_DAYS - The duration of the investment in days\r\nDAYS_USED - Number of days the investment has used\r\nTTM - Number of days left for investment to mature\r\nMATURITY_DATE - The date the investment is going to mature\r\nPERCENT_DAYS_USED - Number of days the investment has used in percentage\r\nFREQUENCY - Frequency of savings - 1 - Daily , 2 - Monthly , 4- Weekly"
+      },
+      "response": []
+    },
+    {
+      "name": "Saving Plan Details",
+      "id": "15f9d762-a163-4e38-8767-b4395a014d23",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "xIpuUk5JY1gnePohE2qOei0WRMkbwdEzZ9LQDVDpHjWaHvy8qtlSAFwvOTfGzric",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"token\":\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJQRU9QTEVfSUQiOiIxMDQxMjMiLCJFTUFJTCI6Im9rdW51Z2Eub3JpeW9taUBnbWFpbC5jb20iLCJMRU5ERVJfSUQiOiI0MDAyMiJ9.W4ZT76eq1TFrJ7J-GnZHEkmioKnsL9OH95Gurrb6CUQ\",\"request_id\":2787}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": "https://mobile.creditclan.com/api/v3/customer/savings/plan",
+        "description": "Savings Details\r\nSavings details record\r\n{\r\n\"token\":\"\"|Login token \r\n}\r\nImportant Response Data\r\nIS_ACTIVE - Indicates if the investment is active|1 - Active \r\nINVESTMENT_ID -  Represent the unique id of the investment - Its also the plan_id in other endpoints,\r\nREQUEST_PRINCIPAL - Amount of the investment,\r\nREQUEST_TENOR - Duration of the investment in months,\r\nDATE_ADDED - Date investment was created\r\nFUNDS_RECEIVED_DATE - The contract date for the savings\r\nINVESTMENT_TITLE - Savings title\r\nREQUEST_RATE - The interest rate applied to the investment\r\nBID_RATE_PERIOD_ID - Unit of the interest rate - 1- Per day | 2 - Per Month | 3 - Per Year\r\nREQUEST_TENOR_IN_DAYS - The duration of the investment in days\r\nDAYS_USED - Number of days the investment has used\r\nTTM - Number of days left for investment to mature\r\nMATURITY_DATE - The date the investment is going to mature\r\nPERCENT_DAYS_USED - Number of days the investment has used in percentage\r\nFREQUENCY - Frequency of savings - 1 - Daily , 2 - Monthly , 4- Weekly"
+      },
+      "response": []
+    },
+    {
+      "name": "Quick Save With New Cards",
+      "id": "658d621e-7bbb-4e1a-9312-fb3d29032b42",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-api-key",
+            "type": "text",
+            "value": "xIpuUk5JY1gnePohE2qOei0WRMkbwdEzZ9LQDVDpHjWaHvy8qtlSAFwvOTfGzric"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"token\":\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJQRU9QTEVfSUQiOiIxMDQxMjMiLCJFTUFJTCI6Im9rdW51Z2Eub3JpeW9taUBnbWFpbC5jb20iLCJMRU5ERVJfSUQiOiI0MDAyMiJ9.W4ZT76eq1TFrJ7J-GnZHEkmioKnsL9OH95Gurrb6CUQ\",\r\n    \"payload\":{\r\n        \"plan_id\":\"\",\r\n        \"reference\":\"\",\r\n        \"amount\":\"\"\r\n    }\r\n\r\n}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": "https://mobile.creditclan.com/api/v3/customer/quicksave/newcard",
+        "description": "Savings Quick save \r\nSave a certain amount in a savings plan\r\n{\r\n    \"token\":\"\"|Customer login token,\r\n    \"payload\":{\r\n        \"plan_id\":\"\"|Unique ID for savings request,\r\n        \"reference\":\"\"|Reference of the transaction from paystack,\r\n        \"amount\":\"\"|Amount to be saved\r\n    }\r\n\r\n}"
+      },
+      "response": []
+    },
+    {
+      "name": "Savings Withdrawal",
+      "id": "4766ce9b-73d9-42fd-a6bf-c4eb6b264aad",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-api-key",
+            "type": "text",
+            "value": "xIpuUk5JY1gnePohE2qOei0WRMkbwdEzZ9LQDVDpHjWaHvy8qtlSAFwvOTfGzric"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"token\":\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJQRU9QTEVfSUQiOiIxMDQxMjMiLCJFTUFJTCI6Im9rdW51Z2Eub3JpeW9taUBnbWFpbC5jb20iLCJMRU5ERVJfSUQiOiI0MDAyMiJ9.W4ZT76eq1TFrJ7J-GnZHEkmioKnsL9OH95Gurrb6CUQ\",\r\n    \"payload\":{\r\n        \"plan_id\":\"\",\r\n        \"account_selected\":\"\",\r\n        \"amount\":\"\"\r\n    }\r\n\r\n}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": "https://mobile.creditclan.com/api/v3/user/savings/withdraw",
+        "description": "Savings Withdrawal\r\nWithdraw from a customer savings\r\n{\r\n    \"token\":\"\"|Customer token,\r\n    \"payload\":{\r\n        \"plan_id\":\"1234\"|Unique id from the savings,\r\n        \"amount\":\"100000\"|Amount to withdraw,\r\n        \"account_selected\":\"12\"|Customer bank account to transfer the funds to| The unique id from list of customer bank accounts\r\n    }\r\n}"
+      },
+      "response": []
+    },
+    {
+      "name": "Investment Products",
+      "id": "b3386e68-69ed-4c8a-bcf2-4b414594799b",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-api-key",
+            "type": "text",
+            "value": "xIpuUk5JY1gnePohE2qOei0WRMkbwdEzZ9LQDVDpHjWaHvy8qtlSAFwvOTfGzric"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJQRU9QTEVfSUQiOiIxMTQyNDYiLCJFTUFJTCI6Im9rdW51Z2Eub3JpeW9taUBnbWFpbC5jb20iLCJMRU5ERVJfSUQiOiI0MDE3OCJ9.pS-i9PRsfN55FpQWEM3-3UzO5xnsb_Iwo4S8ZRElGD8\"\r\n}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": "https://mobile.creditclan.com/api/v3/investments/products",
+        "description": "Investment Products Endpoint\r\nGet list of investment products offered\r\n{\r\n    \"token\": \"***\"|Token from the customer login endpoint\r\n}\r\nImportant Response Data\r\nINVESTMENT_PRODUCT_ID - Indicates the investment product a customer wants to invest in\r\nINVESTMENT_AMOUNT -  Minimum amount that can be invested in the product,\r\nINVESTMENT_MAX_AMOUNT - Maximum amount that can be invested in the product,\r\nTENOR - Minimum duration allowed for the investment (in months),\r\nMAX_INVESTMENT_DURATION - Maximum duration for the investment\r\nINTEREST - Interest rate for the investment per annum,\r\nINVESTMENT_TITLE - Title of the investment product,\r\nINVESTMENT_DESCRIPTION - Description of the investment product\r\n"
+      },
+      "response": []
+    },
+    {
+      "name": "Create an Investment Request",
+      "id": "76b1e672-357b-4cc9-84ab-867183b9914f",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-api-key",
+            "type": "text",
+            "value": "xIpuUk5JY1gnePohE2qOei0WRMkbwdEzZ9LQDVDpHjWaHvy8qtlSAFwvOTfGzric"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"plan\": {\r\n        \"duration\": \"1\",\r\n        \"amount\": \"10\",\r\n        \"product_id\": \"2823\"\r\n    },\r\n    \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJQRU9QTEVfSUQiOiIxMTIzNDQiLCJFTUFJTCI6Im9rdW51Z2Eub3JpeW9taUBnbWFpbC5jb20iLCJMRU5ERVJfSUQiOiI0MDAyMiJ9.kZnH6wA-u84Dg2TlOj106k1jBbwLDJOBib9JeSfLxyQ\",\r\n    \"paystack\": {\r\n        \"reference\": \"\"\r\n    }\r\n}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": "https://mobile.creditclan.com/api/v3/investment/create",
+        "description": "Create Investment\r\nCreate a new investment for a customer\r\n{\r\n    \"plan\": {\r\n        \"duration\": \"1\"|The duration for the investment in months,\r\n        \"amount\": \"10\"|The amount the customer wants to invest,\r\n        \"product_id\": \"2823\"|The product the customer is investing in\r\n    },\r\n    \"token\": \"\"|Customer login token,\r\n    \"paystack\": {\r\n        \"reference\": \"\"|Reference for the paystack transaction if a customer uses card to fund the transaction\r\n    }\r\n}\r\nNB: Paystack object to be left out if customer did not fund the investment using a card\r\n"
+      },
+      "response": []
+    },
+    {
+      "name": "Pending Investments",
+      "id": "164c7af6-74ce-4403-97ae-03080f65ffa7",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "xIpuUk5JY1gnePohE2qOei0WRMkbwdEzZ9LQDVDpHjWaHvy8qtlSAFwvOTfGzric",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"token\":\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJQRU9QTEVfSUQiOiIxMTEyNDQiLCJFTUFJTCI6InNlZ2J1a2Vuc2hpQHlhaG9vLmNvbSIsIkxFTkRFUl9JRCI6IjQwMDIyIn0.5Ej6tlOGJGlYPcGQ9bg3fCAVTroH4RhT1ul_-yF4XnU\"}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": "https://mobile.creditclan.com/api/v3/customer/investment/pending",
+        "description": "Pending Investments\r\nGet the list of customer's pending investments under review\r\n{\r\n\"token\":\"\"|Login token \r\n}\r\nImportant Response Data\r\nIS_ACTIVE - Indicates if the investment is active|1 - Active \r\nINVESTMENT_ID -  Represent the unique id of the investment - Its also the plan_id in other endpoints,\r\nREQUEST_PRINCIPAL - Amount of the investment,\r\nREQUEST_TENOR - Duration of the investment in months,\r\nDATE_ADDED - Date investment was created\r\nMATURITY_VALUE - The value of the investment when it matures,\r\nTOTAL_INTERESTS - Total Interests to be earned on the investment,\r\nFUNDS_RECEIVED_DATE - The contract date for the investment - Approved date the investment is to start\r\nINVESTMENT_TITLE - Investment title\r\nREQUEST_RATE - The interest rate applied to the investment\r\nBID_RATE_PERIOD_ID - Unit of the interest rate - 1- Per day | 2 - Per Month | 3 - Per Year\r\n"
+      },
+      "response": []
+    },
+    {
+      "name": "Investment Portfolio",
+      "id": "c226986c-a505-4b3f-92e9-9505d2c6a327",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "xIpuUk5JY1gnePohE2qOei0WRMkbwdEzZ9LQDVDpHjWaHvy8qtlSAFwvOTfGzric",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"token\":\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJQRU9QTEVfSUQiOiIxMTEyNDQiLCJFTUFJTCI6InNlZ2J1a2Vuc2hpQHlhaG9vLmNvbSIsIkxFTkRFUl9JRCI6IjQwMDIyIn0.5Ej6tlOGJGlYPcGQ9bg3fCAVTroH4RhT1ul_-yF4XnU\"}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": "https://mobile.creditclan.com/api/v3/customer/investment/portfolio",
+        "description": "Pending Investments\r\nGet the list of customer's pending investments under review\r\n{\r\n\"token\":\"\"|Login token \r\n}\r\nImportant Response Data\r\nIS_ACTIVE - Indicates if the investment is active|1 - Active \r\nINVESTMENT_ID -  Represent the unique id of the investment - Its also the plan_id in other endpoints,\r\nREQUEST_PRINCIPAL - Amount of the investment,\r\nREQUEST_TENOR - Duration of the investment in months,\r\nDATE_ADDED - Date investment was created\r\nMATURITY_VALUE - The value of the investment when it matures,\r\nTOTAL_INTERESTS - Total Interests to be earned on the investment,\r\nFUNDS_RECEIVED_DATE - The contract date for the investment - Approved date the investment is to start\r\nINVESTMENT_TITLE - Investment title\r\nREQUEST_RATE - The interest rate applied to the investment\r\nBID_RATE_PERIOD_ID - Unit of the interest rate - 1- Per day | 2 - Per Month | 3 - Per Year\r\nREQUEST_TENOR_IN_DAYS - The duration of the investment in days\r\nDAYS_USED - Number of days the investment has used\r\nTTM - Number of days left for investment to mature\r\nMATURITY_DATE - The date the investment is going to mature\r\nPERCENT_DAYS_USED - Number of days the investment has used in percentage"
+      },
+      "response": []
+    },
+    {
+      "name": "Investemnts History",
+      "id": "b96d32ef-895e-448c-93f9-5cbc029435fc",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "xIpuUk5JY1gnePohE2qOei0WRMkbwdEzZ9LQDVDpHjWaHvy8qtlSAFwvOTfGzric",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"token\":\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJQRU9QTEVfSUQiOiIxMTEyNDQiLCJFTUFJTCI6InNlZ2J1a2Vuc2hpQHlhaG9vLmNvbSIsIkxFTkRFUl9JRCI6IjQwMDIyIn0.5Ej6tlOGJGlYPcGQ9bg3fCAVTroH4RhT1ul_-yF4XnU\"}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": "https://mobile.creditclan.com/api/v3/customer/investment/history",
+        "description": "Pending Investments\r\nGet the list of customer's pending investments under review\r\n{\r\n\"token\":\"\"|Login token \r\n}\r\nImportant Response Data\r\nIS_ACTIVE - Indicates if the investment is active|1 - Active \r\nINVESTMENT_ID -  Represent the unique id of the investment - Its also the plan_id in other endpoints,\r\nREQUEST_PRINCIPAL - Amount of the investment,\r\nREQUEST_TENOR - Duration of the investment in months,\r\nDATE_ADDED - Date investment was created\r\nMATURITY_VALUE - The value of the investment when it matures,\r\nTOTAL_INTERESTS - Total Interests to be earned on the investment,\r\nFUNDS_RECEIVED_DATE - The contract date for the investment - Approved date the investment is to start\r\nINVESTMENT_TITLE - Investment title\r\nREQUEST_RATE - The interest rate applied to the investment\r\nBID_RATE_PERIOD_ID - Unit of the interest rate - 1- Per day | 2 - Per Month | 3 - Per Year\r\nREQUEST_TENOR_IN_DAYS - The duration of the investment in days\r\nDAYS_USED - Number of days the investment has used\r\nTTM - Number of days left for investment to mature\r\nMATURITY_DATE - The date the investment is going to mature\r\nPERCENT_DAYS_USED - Number of days the investment has used in percentage"
+      },
+      "response": []
+    },
+    {
+      "name": "Investment Details",
+      "id": "a02b5416-2f9b-46e5-9218-64234e103614",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "xIpuUk5JY1gnePohE2qOei0WRMkbwdEzZ9LQDVDpHjWaHvy8qtlSAFwvOTfGzric",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"token\":\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJQRU9QTEVfSUQiOiIxMDQxMjMiLCJFTUFJTCI6Im9rdW51Z2Eub3JpeW9taUBnbWFpbC5jb20iLCJMRU5ERVJfSUQiOiI0MDAyMiJ9.W4ZT76eq1TFrJ7J-GnZHEkmioKnsL9OH95Gurrb6CUQ\",\"request_id\":2787}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": "https://mobile.creditclan.com/api/v3/customer/investment/details",
+        "description": "Details of an investment record\r\nGet the list of customer's pending investments under review\r\n{\r\n\"token\":\"\"|Login token,\r\n\"request_id\":2787|Unique ID of the investment\r\n}\r\nImportant Response Data\r\nIS_ACTIVE - Indicates if the investment is active|1 - Active \r\nINVESTMENT_ID -  Represent the unique id of the investment - Its also the plan_id in other endpoints,\r\nREQUEST_PRINCIPAL - Amount of the investment,\r\nREQUEST_TENOR - Duration of the investment in months,\r\nDATE_ADDED - Date investment was created\r\nMATURITY_VALUE - The value of the investment when it matures,\r\nTOTAL_INTERESTS - Total Interests to be earned on the investment,\r\nFUNDS_RECEIVED_DATE - The contract date for the investment - Approved date the investment is to start\r\nINVESTMENT_TITLE - Investment title\r\nREQUEST_RATE - The interest rate applied to the investment\r\nBID_RATE_PERIOD_ID - Unit of the interest rate - 1- Per day | 2 - Per Month | 3 - Per Year\r\nREQUEST_TENOR_IN_DAYS - The duration of the investment in days\r\nDAYS_USED - Number of days the investment has used\r\nTTM - Number of days left for investment to mature\r\nMATURITY_DATE - The date the investment is going to mature\r\nPERCENT_DAYS_USED - Number of days the investment has used in percentage"
+      },
+      "response": []
+    },
+    {
+      "name": "Investment Rollover",
+      "id": "0cfa6ad8-ed16-45c1-9318-bc2d9b81f52f",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "xIpuUk5JY1gnePohE2qOei0WRMkbwdEzZ9LQDVDpHjWaHvy8qtlSAFwvOTfGzric",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"token\":\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJQRU9QTEVfSUQiOiIxMDQxMjMiLCJFTUFJTCI6Im9rdW51Z2Eub3JpeW9taUBnbWFpbC5jb20iLCJMRU5ERVJfSUQiOiI0MDAyMiJ9.W4ZT76eq1TFrJ7J-GnZHEkmioKnsL9OH95Gurrb6CUQ\",\n    \"payload\":{\n        \"plan_id\":\"1234\",\n        \"duration\":\"1\"\n    }\n\n}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": "https://mobile.creditclan.com/api/v3/user/investments/rollover",
+        "description": "Investment Rollover\r\nRollover a customer investment\r\n{\r\n    \"token\":\"\"|Customer login token,\r\n    \"payload\":{\r\n        \"plan_id\":\"1234\"|Investment id from the investment record,\r\n        \"duration\":\"1\"|Duration for the rollover in months\r\n    }\r\n\r\n}"
+      },
+      "response": []
+    },
+    {
+      "name": "Investment Top Up",
+      "id": "bb996eaf-efcb-4434-b14c-8463a088ac74",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "xIpuUk5JY1gnePohE2qOei0WRMkbwdEzZ9LQDVDpHjWaHvy8qtlSAFwvOTfGzric",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"token\":\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJQRU9QTEVfSUQiOiIxMDQxMjMiLCJFTUFJTCI6Im9rdW51Z2Eub3JpeW9taUBnbWFpbC5jb20iLCJMRU5ERVJfSUQiOiI0MDAyMiJ9.W4ZT76eq1TFrJ7J-GnZHEkmioKnsL9OH95Gurrb6CUQ\",\n    \"payload\":{\n        \"plan_id\":\"1234\",\n        \"amount\":\"10000\"\n    },\n    \"paystack\":{\n        \"reference\":\"123456\"\n    }\n}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": "https://mobile.creditclan.com/api/v3/user/investments/topup",
+        "description": "Investment Top Up\r\nTop Up a customer investment\r\n{\r\n    \"token\":\"\"|Customer login token,\r\n    \"payload\":{\r\n        \"plan_id\":\"1234\"|Investment id from the investment record,\r\n        \"amount\":\"10000\"|Amount for top up\r\n    },\r\n    \"paystack\":{\r\n        \"reference\":\"123456\"|Reference for the paystack transaction if a customer uses card to fund the transaction\r\n    }\r\n}\r\nNB: Paystack object to be left out if customer did not fund the investment using a card\r\n\r\n"
+      },
+      "response": []
+    },
+    {
+      "name": "Investment Liquidate",
+      "id": "d2b3885c-c51b-408f-8e0e-63141d978857",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "xIpuUk5JY1gnePohE2qOei0WRMkbwdEzZ9LQDVDpHjWaHvy8qtlSAFwvOTfGzric",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"token\":\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJQRU9QTEVfSUQiOiIxMDQxMjMiLCJFTUFJTCI6Im9rdW51Z2Eub3JpeW9taUBnbWFpbC5jb20iLCJMRU5ERVJfSUQiOiI0MDAyMiJ9.W4ZT76eq1TFrJ7J-GnZHEkmioKnsL9OH95Gurrb6CUQ\",\n    \"payload\":{\n        \"plan_id\":\"1234\",\n        \"amount\":\"100000\",\n        \"withdrawal_bank_id\":\"12\"\n    }\n}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": "https://mobile.creditclan.com/api/v3/user/investments/liquidate",
+        "description": "Investment Liquidate\r\nLiquidate a customer investment - Withdraw part of an active investment\r\n{\r\n    \"token\":\"\"|Customer token,\r\n    \"payload\":{\r\n        \"plan_id\":\"1234\"|Investment id of the investment to liquidate from,\r\n        \"amount\":\"100000\"|Amount to liquidate,\r\n        \"withdrawal_bank_id\":\"12\"|Customer bank account to transfer the funds to| The unique id from list of customer bank accounts\r\n    }\r\n}"
+      },
+      "response": []
+    },
+    {
+      "name": "Investment Terminate",
+      "id": "ca34592e-3777-4b0e-9062-13e426aa5cfe",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "xIpuUk5JY1gnePohE2qOei0WRMkbwdEzZ9LQDVDpHjWaHvy8qtlSAFwvOTfGzric",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"token\":\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJQRU9QTEVfSUQiOiIxMDQxMjMiLCJFTUFJTCI6Im9rdW51Z2Eub3JpeW9taUBnbWFpbC5jb20iLCJMRU5ERVJfSUQiOiI0MDAyMiJ9.W4ZT76eq1TFrJ7J-GnZHEkmioKnsL9OH95Gurrb6CUQ\",\n    \"payload\":{\n        \"plan_id\":\"\", \n        \"withdrawal_bank_id\":\"\"\n    }\n}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": "https://mobile.creditclan.com/api/v3/user/investments/liquidate",
+        "description": "Investment Terminate\r\nTerminate a customer investment - Close an active investment\r\n{\r\n    \"token\":\"\"|Customer token,\r\n    \"payload\":{\r\n        \"plan_id\":\"1234\"|Investment id of the investment to liquidate from\r\n        \"withdrawal_bank_id\":\"12\"|Customer bank account to transfer the funds to| The unique id from list of customer bank accounts\r\n    }\r\n}"
+      },
+      "response": []
+    },
+    {
+      "name": "Countries",
+      "id": "08c16dd8-14fe-46bd-9abf-1b0314e5c756",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "xIpuUk5JY1gnePohE2qOei0WRMkbwdEzZ9LQDVDpHjWaHvy8qtlSAFwvOTfGzric",
+            "type": "text"
+          }
+        ],
+        "url": "https://mobile.creditclan.com/webapi/v1/countries"
+      },
+      "response": []
+    },
+    {
+      "name": "States",
+      "id": "0d07a085-7118-4b56-ab8c-ec603f768c22",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "xIpuUk5JY1gnePohE2qOei0WRMkbwdEzZ9LQDVDpHjWaHvy8qtlSAFwvOTfGzric",
+            "type": "text"
+          }
+        ],
+        "url": "https://mobile.creditclan.com/webapi/v1/states"
+      },
+      "response": []
+    },
+    {
+      "name": "Gender",
+      "id": "8fbce2ab-8b48-4a53-8d74-059b1838544e",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "xIpuUk5JY1gnePohE2qOei0WRMkbwdEzZ9LQDVDpHjWaHvy8qtlSAFwvOTfGzric",
+            "type": "text"
+          }
+        ],
+        "url": "https://mobile.creditclan.com/webapi/v1/genders"
+      },
+      "response": []
+    },
+    {
+      "name": "Occupations",
+      "id": "bfbfba6d-9162-4013-896e-cbc69eba3b0b",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "xIpuUk5JY1gnePohE2qOei0WRMkbwdEzZ9LQDVDpHjWaHvy8qtlSAFwvOTfGzric",
+            "type": "text"
+          }
+        ],
+        "url": "https://mobile.creditclan.com/webapi/v1/occupations"
+      },
+      "response": []
+    },
+    {
+      "name": "Work Sectors",
+      "id": "6e6dc90c-a852-46a4-b945-e29e5ed8cc17",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "xIpuUk5JY1gnePohE2qOei0WRMkbwdEzZ9LQDVDpHjWaHvy8qtlSAFwvOTfGzric",
+            "type": "text"
+          }
+        ],
+        "url": "https://mobile.creditclan.com/webapi/v1/work_sectors"
+      },
+      "response": []
+    },
+    {
+      "name": "Education Sectors",
+      "id": "a04928f8-bace-4100-8e9b-ebf43bcc7188",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "xIpuUk5JY1gnePohE2qOei0WRMkbwdEzZ9LQDVDpHjWaHvy8qtlSAFwvOTfGzric",
+            "type": "text"
+          }
+        ],
+        "url": "https://mobile.creditclan.com/webapi/v1/education_sectors"
+      },
+      "response": []
+    },
+    {
+      "name": "Desginations",
+      "id": "d945fd9b-a0a6-44f2-aff6-a95f861e1fe2",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "xIpuUk5JY1gnePohE2qOei0WRMkbwdEzZ9LQDVDpHjWaHvy8qtlSAFwvOTfGzric",
+            "type": "text"
+          }
+        ],
+        "url": "https://mobile.creditclan.com/webapi/v1/designations"
+      },
+      "response": []
+    },
+    {
+      "name": "Banks",
+      "id": "ee3caddc-7453-4415-a9bd-cae520ccf976",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "xIpuUk5JY1gnePohE2qOei0WRMkbwdEzZ9LQDVDpHjWaHvy8qtlSAFwvOTfGzric",
+            "type": "text"
+          }
+        ],
+        "url": "https://mobile.creditclan.com/webapi/v1/banks"
+      },
+      "response": []
+    },
+    {
+      "name": "Marital Status",
+      "id": "f5f9a066-9abf-47af-b188-2b5f644f7c01",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "xIpuUk5JY1gnePohE2qOei0WRMkbwdEzZ9LQDVDpHjWaHvy8qtlSAFwvOTfGzric",
+            "type": "text"
+          }
+        ],
+        "url": "https://mobile.creditclan.com/webapi/v1/marital_status"
+      },
+      "response": []
+    },
+    {
+      "name": "Loan Purpose",
+      "id": "4f1fbc17-c893-4265-83b4-703aff8ba9a5",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "xIpuUk5JY1gnePohE2qOei0WRMkbwdEzZ9LQDVDpHjWaHvy8qtlSAFwvOTfGzric",
+            "type": "text"
+          }
+        ],
+        "url": "https://mobile.creditclan.com/webapi/v1/loan_purpose"
+      },
+      "response": []
+    },
+    {
+      "name": "Residence Types",
+      "id": "06f979ca-5a1c-4dee-8fe3-a4bcfa49d651",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "xIpuUk5JY1gnePohE2qOei0WRMkbwdEzZ9LQDVDpHjWaHvy8qtlSAFwvOTfGzric",
+            "type": "text"
+          }
+        ],
+        "url": "https://mobile.creditclan.com/webapi/v1/residence_types"
+      },
+      "response": []
+    },
+    {
+      "name": "LGAs",
+      "id": "f167fd63-d155-428e-8e73-d3a9a1ff86bd",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "xIpuUk5JY1gnePohE2qOei0WRMkbwdEzZ9LQDVDpHjWaHvy8qtlSAFwvOTfGzric",
+            "type": "text"
+          }
+        ],
+        "url": "https://mobile.creditclan.com/webapi/v1/states/(:state_id)/lgas"
+      },
+      "response": []
+    },
+    {
+      "name": "Loan Products",
+      "id": "69dd6fa8-bb1c-4640-aa48-5fedc787e6d8",
+      "protocolProfileBehavior": { "disableBodyPruning": true },
+      "request": {
+        "auth": { "type": "apikey", "apikey": { "key": "", "value": "" } },
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "name": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "x-api-key",
+            "value": "xIpuUk5JY1gnePohE2qOei0WRMkbwdEzZ9LQDVDpHjWaHvy8qtlSAFwvOTfGzric",
+            "type": "text"
+          }
+        ],
+        "body": { "mode": "raw", "raw": "" },
+        "url": "https://mobile.creditclan.com/webapi/v1/products"
+      },
+      "response": []
+    },
+    {
+      "name": "Apply For Loan",
+      "id": "5710efc4-2429-433c-899f-90bbeab8ec8e",
+      "request": {
+        "auth": { "type": "apikey", "apikey": { "key": "", "value": "" } },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "name": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "x-api-key",
+            "value": "xIpuUk5JY1gnePohE2qOei0WRMkbwdEzZ9LQDVDpHjWaHvy8qtlSAFwvOTfGzric",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"profile\": {\r\n        \"gender\": \"0\",\r\n        \"date_of_birth\": \"1984-10-06\",\r\n        \"nationality\": \"1\",\r\n        \"marital_status\": \"1\",\r\n        \"profile_image\": \"\", \r\n        \"token\":\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJQRU9QTEVfSUQiOiIxMDE1MDEiLCJFTUFJTCI6Im9rdW51Z2Eub3JpeW9taUBnbWFpbC5jb20iLCJMRU5ERVJfSUQiOiI0MDEwOSJ9.K7dASi6dCs62RHVnmlXwbrVlaLzZ2RvgIvvHd_I8qBg\"\r\n    },\r\n    \"request\": {\r\n        \"amount\": \"10000\",\r\n        \"tenor\": \"6\",\r\n        \"product_id\":\"29452\"\r\n    },\r\n    \"next_of_kin\": {\r\n        \"full_name\": \"jane doe\",\r\n        \"email\": \"jane.doe@test.com\",\r\n        \"phone\": \"07012345678\",\r\n        \"address\": \"No 12,Lorem ipsum, Silicon Valley\",\r\n        \"relationship\": \"wife\"\r\n    },\r\n    \"education\": {\r\n        \"institution\": \"university of lagos\",\r\n        \"qualification\": \"17\",\r\n        \"qualification_year\": \"1998\",\r\n        \"others\": \"diploma,msc,phd\"\r\n    },\r\n    \"home_address\": {\r\n        \"state_id\": \"25\",\r\n        \"address\": \"No 10, Lorem Ipsum\",\r\n        \"type_of_residence\": \"1\",\r\n        \"lga_id\": \"205\",\r\n        \"monthly_rent_expenses\": \"1000\",\r\n        \"number_of_years\": \"2\"\r\n    },\r\n    \"account\": {\r\n        \"id\": \"1\",\r\n        \"account_no\": \"0123456789\",\r\n        \"account_name\": \"John Doe\",\r\n        \"bvn\": \"12345678901\"\r\n    },\r\n    \"work\": {\r\n        \"occupation_id\": \"1\",\r\n        \"work_sector\": \"11\",\r\n        \"company_name\": \"creditclan\",\r\n        \"address\": \"No 10, Lorem Ipsum\",\r\n        \"designation_id\": \"21\",\r\n        \"start_month\": \"MM\",\r\n        \"start_year\": \"YYYY\",\r\n        \"monthly_income\": \"100000\",\r\n        \"gross_annual_income\": \"10000000\",\r\n        \"work_email\": \"\"\r\n    },\r\n    \"attachments\":[\r\n        {\r\n           \"file_name\":\"28bd933b6013d4e4872e7268205b036b.jpeg\"\r\n        },\r\n        {\r\n           \"file_name\":\"28bd933b6013d4e4872e7268205b036b.jpeg\"\r\n        }\r\n    ]\r\n\r\n}"
+        },
+        "url": "https://mobile.creditclan.com/api/v3/loan/apply"
+      },
+      "response": []
+    },
+    {
+      "name": "Current Loan",
+      "id": "9521a5e0-d6ac-4c97-b33b-8024831da809",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "xIpuUk5JY1gnePohE2qOei0WRMkbwdEzZ9LQDVDpHjWaHvy8qtlSAFwvOTfGzric",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"token\":\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJQRU9QTEVfSUQiOiIxMDE1MDEiLCJFTUFJTCI6Im9rdW51Z2Eub3JpeW9taUBnbWFpbC5jb20iLCJMRU5ERVJfSUQiOiI0MDEwOSJ9.K7dASi6dCs62RHVnmlXwbrVlaLzZ2RvgIvvHd_I8qBg\"}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": "https://mobile.creditclan.com/api/v3/customer/current/loan"
+      },
+      "response": []
+    },
+    {
+      "name": "Loan Schedule",
+      "id": "50a530b5-218a-4fde-84a4-d407e0a1d26e",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "xIpuUk5JY1gnePohE2qOei0WRMkbwdEzZ9LQDVDpHjWaHvy8qtlSAFwvOTfGzric",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"token\":\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJQRU9QTEVfSUQiOiIxMDE1MDEiLCJFTUFJTCI6Im9rdW51Z2Eub3JpeW9taUBnbWFpbC5jb20iLCJMRU5ERVJfSUQiOiI0MDEwOSJ9.K7dASi6dCs62RHVnmlXwbrVlaLzZ2RvgIvvHd_I8qBg\",\r\n    \"request_id\":\"12345\"\r\n}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": "https://lendingapis.creditclan.com/api/v3/loan/schedule"
+      },
+      "response": []
+    },
+    {
+      "name": "Customer Loan History",
+      "id": "97bb30f7-0f01-41d2-b98e-87c8ebbbbab8",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "xIpuUk5JY1gnePohE2qOei0WRMkbwdEzZ9LQDVDpHjWaHvy8qtlSAFwvOTfGzric",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"token\":\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJQRU9QTEVfSUQiOiIxMDE1MDEiLCJFTUFJTCI6Im9rdW51Z2Eub3JpeW9taUBnbWFpbC5jb20iLCJMRU5ERVJfSUQiOiI0MDEwOSJ9.K7dASi6dCs62RHVnmlXwbrVlaLzZ2RvgIvvHd_I8qBg\"}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": "https://mobile.creditclan.com/api/v3/customer/loan/history"
+      },
+      "response": []
+    },
+    {
+      "name": "Loan Details",
+      "id": "ae3d2b8e-3090-453e-a903-6e0772d76d04",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "xIpuUk5JY1gnePohE2qOei0WRMkbwdEzZ9LQDVDpHjWaHvy8qtlSAFwvOTfGzric",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"token\":\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJQRU9QTEVfSUQiOiIxMDE1MDEiLCJFTUFJTCI6Im9rdW51Z2Eub3JpeW9taUBnbWFpbC5jb20iLCJMRU5ERVJfSUQiOiI0MDEwOSJ9.K7dASi6dCs62RHVnmlXwbrVlaLzZ2RvgIvvHd_I8qBg\",\"request_id\":\"12345\"}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": "https://lendingapis.creditclan.com/api/v3/loan/details"
+      },
+      "response": []
+    },
+    {
+      "name": "Make Loan Payment",
+      "id": "14678a82-a14c-4a3c-a350-56e7dfb38f3e",
+      "request": {
+        "auth": {
+          "type": "apikey",
+          "apikey": {
+            "key": "x-api-key",
+            "value": "6f2FArftQk2NY5bXymekdAGhCz9oWIpHbpYc3Hoq"
+          }
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "name": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "warning": "This is a duplicate header and will be overridden by the x-api-key header generated by Postman.",
+            "key": "x-api-key",
+            "value": "xIpuUk5JY1gnePohE2qOei0WRMkbwdEzZ9LQDVDpHjWaHvy8qtlSAFwvOTfGzric",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJQRU9QTEVfSUQiOiIxNzQ3NyIsIkVNQUlMIjoib2t1bnVnYS5vcml5b21pQGdtYWlsLmNvbSIsIkxFTkRFUl9JRCI6IjY3NjAifQ.aMVCWqYrSON4BLqtWj6ohyC-AylWy1n_Rezby3SpOP4\",\r\n    \"reference\":\"hkfhlerlwklkrq\",\r\n    \"request_id\":\"123456\"\r\n}"
+        },
+        "url": "https://lendingapis.creditclan.com/api/v3/loan/make/payment"
+      },
+      "response": []
+    },
+    {
+      "name": "Quicksave",
+      "id": "4747dc3d-f26a-4e59-9c51-72942a9535ed",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-api-key",
+            "type": "text",
+            "value": "zf8TVZ31jvXBcJYsUJ7zqITlclne9eiCrHRRAIrGy7Qh9NW6LVX2oaE5xjOdFnUK"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"token\":\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJQRU9QTEVfSUQiOiIxMDQxMjMiLCJFTUFJTCI6Im9rdW51Z2Eub3JpeW9taUBnbWFpbC5jb20iLCJMRU5ERVJfSUQiOiI0MDAyMiJ9.W4ZT76eq1TFrJ7J-GnZHEkmioKnsL9OH95Gurrb6CUQ\",\r\n    \"payload\":{\r\n        \"reference\":\"\"\r\n    }\r\n\r\n}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": "https://mobile.creditclan.com/api/v3/customer/quicksave",
+        "description": "Quick Save"
+      },
+      "response": []
+    },
+    {
+      "name": "Create a Vest Small Small Request Flutter",
+      "id": "15132273-7242-4eeb-9133-b221feaaa926",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-api-key",
+            "type": "text",
+            "value": "xIpuUk5JY1gnePohE2qOei0WRMkbwdEzZ9LQDVDpHjWaHvy8qtlSAFwvOTfGzric"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"plan\": {\r\n        \"title\": \"Savings\",\r\n        \"amount\": \"1000\",\r\n        \"target\": \"4000\",\r\n        \"frequency\": \"4\",\r\n        \"duration\": \"1\",\r\n        \"start_date\": \"2020-11-30\",\r\n        \"funding_source\": \"1\",\r\n        \"category\":\"1\",\r\n        \"automated\":\"1\"\r\n    },\r\n    \"card\": {\r\n        \"connected_card_id\": \"92578\"\r\n    },\r\n    \"flutterwave\": {\r\n        \"txn_ref\": \"334460480\"\r\n    },\r\n    \"user_id\": \"117500\"\r\n}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": "https://mobile.creditclan.com/api/v3/customer/apply_for_savings_flutterwave"
+      },
+      "response": []
+    },
+    {
+      "name": "Change Password",
+      "id": "58d77473-a045-4825-b297-61605fa5c64b",
+      "request": {
+        "auth": { "type": "apikey", "apikey": { "key": "", "value": "" } },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "name": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "warning": "This is a duplicate header and will be overridden by the x-api-key header generated by Postman.",
+            "key": "x-api-key",
+            "value": "xIpuUk5JY1gnePohE2qOei0WRMkbwdEzZ9LQDVDpHjWaHvy8qtlSAFwvOTfGzric",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n\t\"token\":\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJQRU9QTEVfSUQiOiIxNzQ3NyIsIkVNQUlMIjoib2t1bnVnYS5vcml5b21pQGdtYWlsLmNvbSIsIkxFTkRFUl9JRCI6IjY3NjAifQ.aMVCWqYrSON4BLqtWj6ohyC-AylWy1n_Rezby3SpOP4\",\n\t\"password\":\"password\",\n\t\"confirm_password\":\"password\"\n}"
+        },
+        "url": "https://mobile.creditclan.com/api/v3/user/change_password"
+      },
+      "response": []
+    },
+    {
+      "name": "Initialize Test Paystack Transaction ",
+      "id": "cc0c33aa-9c97-416e-a825-d7df78c6415e",
+      "request": {
+        "auth": { "type": "apikey", "apikey": { "key": "", "value": "" } },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "name": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "x-api-key",
+            "value": "xIpuUk5JY1gnePohE2qOei0WRMkbwdEzZ9LQDVDpHjWaHvy8qtlSAFwvOTfGzric",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJQRU9QTEVfSUQiOiIxNzQ3NyIsIkVNQUlMIjoib2t1bnVnYS5vcml5b21pQGdtYWlsLmNvbSIsIkxFTkRFUl9JRCI6IjY3NjAifQ.aMVCWqYrSON4BLqtWj6ohyC-AylWy1n_Rezby3SpOP4\",\r\n    \"amount\":\"5\"\r\n}"
+        },
+        "url": "https://mobile.creditclan.com/api/v3/gateway/initialize_transaction_test"
+      },
+      "response": []
+    },
+    {
+      "name": "Save Customer Card Test",
+      "id": "83e7f9ab-f244-4ba0-86fa-684731035bfc",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "xIpuUk5JY1gnePohE2qOei0WRMkbwdEzZ9LQDVDpHjWaHvy8qtlSAFwvOTfGzric",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n\t\"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJQRU9QTEVfSUQiOiIxNzQ3NyIsIkVNQUlMIjoib2t1bnVnYS5vcml5b21pQGdtYWlsLmNvbSIsIkxFTkRFUl9JRCI6IjY3NjAifQ.aMVCWqYrSON4BLqtWj6ohyC-AylWy1n_Rezby3SpOP4\",\n\t\"reference\":\"kueiuhwouhol\"\n}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": "https://mobile.creditclan.com/api/v3/customer/add/test/card"
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "id": "2852385e-8c63-4b0d-9f63-5a926535782a",
+        "type": "text/javascript",
+        "exec": [""]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "id": "e2e5000c-d39e-4935-ae1b-8b7b0fe52710",
+        "type": "text/javascript",
+        "exec": [""]
+      }
+    }
+  ]
+}

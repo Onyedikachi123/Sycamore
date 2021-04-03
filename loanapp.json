@@ -1,0 +1,164 @@
+{
+  "loan": null,
+  "avatar": "yzkk3imihdhobm22nxvn.jpg",
+  "profile": {
+    "email": "tamoses2000@gmail.com",
+    "fullname": "Babatunde Akin-Moses",
+    "phone": "08063352208",
+    "state": "25",
+    "address": "21 Adewale Kolawale Crescent Off TF Kuboye Oniru",
+    "dob": "1989-06-21T00:00:00.000Z"
+  },
+  "account": {
+    "name": "AKIN-MOSES BABATUNDE, PETER",
+    "number": "0049313951",
+    "bank": "21",
+    "bvn": "22176023645"
+  },
+  "nok": {
+    "fullname": "Niyi Akin-Moses",
+    "email": "niyoneter4@gmail.com",
+    "phone": "08060644677",
+    "address": "King Faisal Way, Off Lord Lugard Avenue, Asokoro, Abuja",
+    "relationship": "sibling"
+  },
+  "income": {
+    "occupation": "0",
+    "net_monthly_income": "600000",
+    "sector": "59",
+    "address": "C8, Chabari Court, Migori Road,\nOpposite Kasuku Centre"
+  },
+  "card": {
+    "account_card_id": "75945",
+    "last4": "",
+    "expiry_date": "",
+    "authorization_code": null,
+    "response": {
+      "account_card_id": "74836",
+      "last4": "",
+      "expiry_date": "",
+      "authorization_code": "AUTH_7fitju3rta",
+      "response": {
+        "account_card_id": "68645",
+        "last4": "",
+        "expiry_date": "",
+        "authorization_code": null,
+        "response": {
+          "account_card_id": "66198",
+          "last4": "3352",
+          "expiry_date": "05/05",
+          "authorization_code": "AUTH_7fitju3rta",
+          "response": {
+            "id": 567125102,
+            "domain": "live",
+            "status": "success",
+            "reference": "4NteKxFCch",
+            "amount": 100000,
+            "message": null,
+            "gateway_response": "Approved",
+            "paid_at": "2020-03-18T09:36:44.000Z",
+            "created_at": "2020-03-18T09:36:04.000Z",
+            "channel": "card",
+            "currency": "NGN",
+            "ip_address": "197.255.212.34",
+            "metadata": { "referrer": "https://sycamore.ng/invest/apply" },
+            "log": {
+              "start_time": 1584524167,
+              "time_spent": 39,
+              "attempts": 2,
+              "authentication": "otp",
+              "errors": 0,
+              "success": true,
+              "mobile": false,
+              "input": [],
+              "history": [
+                {
+                  "type": "input",
+                  "message": "Filled this field: card number",
+                  "time": 5
+                },
+                {
+                  "type": "input",
+                  "message": "Filled this field: card cvv",
+                  "time": 12
+                },
+                {
+                  "type": "action",
+                  "message": "Attempted to pay with card",
+                  "time": 12
+                },
+                {
+                  "type": "auth",
+                  "message": "Authentication Required: pin",
+                  "time": 13
+                },
+                {
+                  "type": "action",
+                  "message": "Attempted to pay with card",
+                  "time": 17
+                },
+                {
+                  "type": "auth",
+                  "message": "Authentication Required: otp",
+                  "time": 22
+                },
+                {
+                  "type": "success",
+                  "message": "Successfully paid with card",
+                  "time": 39
+                }
+              ]
+            },
+            "fees": 1500,
+            "fees_split": null,
+            "authorization": {
+              "authorization_code": "AUTH_7fitju3rta",
+              "bin": "539983",
+              "last4": "3352",
+              "exp_month": "05",
+              "exp_year": "2021",
+              "channel": "card",
+              "card_type": "mastercard DEBIT",
+              "bank": "Guaranty Trust Bank",
+              "country_code": "NG",
+              "brand": "mastercard",
+              "reusable": true,
+              "signature": "SIG_isPPiPiQxEkwpSexbm1G",
+              "account_name": null,
+              "receiver_bank_account_number": null,
+              "receiver_bank": null
+            },
+            "customer": {
+              "id": 6994387,
+              "first_name": null,
+              "last_name": null,
+              "email": "tamoses2000@gmail.com",
+              "customer_code": "CUS_jkedoa3spl11f0z",
+              "phone": null,
+              "metadata": null,
+              "risk_action": "default"
+            },
+            "plan": null,
+            "order_id": null,
+            "paidAt": "2020-03-18T09:36:44.000Z",
+            "createdAt": "2020-03-18T09:36:04.000Z",
+            "requested_amount": 100000,
+            "transaction_date": "2020-03-18T09:36:04.000Z",
+            "plan_object": [],
+            "subaccount": []
+          }
+        }
+      }
+    }
+  },
+  "user_id": "39286",
+  "request_period_id": 2,
+  "attachments": [
+    { "type": "bank_statement", "uploaded": false, "file_name": "" },
+    { "type": "valid_id", "uploaded": false, "file_name": "" },
+    { "type": "utility", "uploaded": false, "file_name": "" }
+  ],
+  "new_card_added": false,
+  "amount": 100000,
+  "request_tenor": 5
+}

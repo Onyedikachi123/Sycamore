@@ -1,0 +1,18 @@
+// Globals
+$body-font-family: "Poppins", sans-serif !default;
+$font-size-root: 12.8503px !default;
+$line-height-root: 19px !default;
+
+// Variables must come before the import
+$btn-letter-spacing: 0;
+
+$font-weights: (
+  (
+    "thin": 100,
+    "light": 300,
+    "regular": 400,
+    "medium": 500,
+    "bold": 600,
+    "black": 900
+  )
+);
