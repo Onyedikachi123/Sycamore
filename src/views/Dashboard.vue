@@ -25,7 +25,8 @@
             <v-col cols="12" md="6" xm="12">
               <v-card class="pa-7 card-current-loan" flat height="294">
                 <div class="loan-details">
-                  <p class="current-loan">Pending loan</p>
+                  <p class="current-loan" v-if="currentLoan[0].IS_ACTIVE !== '1'">Pending loan</p>
+                  <p class="current-loan" v-if="currentLoan[0].IS_ACTIVE === '1'">Active loan</p>
                   <div
                     class="price-block"
                     data-id="1"
@@ -163,7 +164,9 @@
         >
           <v-row>
             <v-col cols="12" md="5" xm="12">
-              <v-card class="mx-auto" elevation="1">
+              <v-card class="mx-auto" elevation="1"    :to="
+                        `/investments/${investmentPortfolio[0].INVESTMENT_ID}`
+                      ">
                 <v-card-text>
                   <div>Total Investment</div>
                   <p class="display-1 text--primary">
@@ -224,9 +227,6 @@
                     <v-card
                       class="plan1"
                       color="#e8f2e9"
-                      :to="
-                        `/investments/${investmentPortfolio[0].INVESTMENT_ID}`
-                      "
                     >
                       <div class="plan1-header">
                         <h6>Interest Earned</h6>
@@ -252,14 +252,14 @@
                             >
                           </span>
                         </span>
-                        <p>
+                        <!-- <p>
                           Maturity Date:
                           {{
                             new Date(
                               investmentPortfolio[0].MATURITY_DATE
                             ).toDateString()
                           }}
-                        </p>
+                        </p> -->
                       </div>
                     </v-card>
                   </v-col>
@@ -288,9 +288,11 @@
                         >
                           <span class="price-currency">₦</span>
                           <span class="bold-txt price-value">
-                            {{ Number(
+                            <!-- {{ Number(
                               investmentPortfolio[0].REQUEST_PRINCIPAL).toLocaleString()
-                               }}</span
+                               }} -->
+                               0
+                               </span
                           >
                           <span class="price-right-block">
                             <span class="price-month font-weight-bold"
@@ -298,14 +300,14 @@
                             >
                           </span>
                         </span>
-                        <p>
+                        <!-- <p>
                           Maturity Date:
                           {{
                             new Date(
                               investmentPortfolio[0].MATURITY_DATE
                             ).toDateString()
                           }}
-                        </p>
+                        </p> -->
                       </div>
                     </v-card>
                   </v-col>
@@ -346,7 +348,7 @@
                       <button class="see-investment">See all investment</button>
                     </router-link>
                     <router-link
-                      to="/investments"
+                      to="/investments/apply"
                       style="text-decoration: none;"
                     >
                       <button class="new-investment">NEW INVESTMENT</button>

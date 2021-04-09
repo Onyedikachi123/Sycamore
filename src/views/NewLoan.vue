@@ -648,7 +648,7 @@
                   }"
                 >
                   <v-select
-                    v-model="profileData.occupation"
+                    v-model="profileData.occupation_id"
                     :items="occupations"
                     :error-messages="errors"
                     label="Select occupation"
@@ -1095,7 +1095,7 @@ export default Vue.extend({
       designationText: "",
       workSector: "",
       workSectorText: "",
-      occupation: "",
+      occupationId: "",
       startYear: "",
       officialEmail: "",
       bankCode: "",
